@@ -66,6 +66,7 @@ module.exports = function(eleventyConfig) {
     return [...tagSet];
   });
 
+  eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
 
