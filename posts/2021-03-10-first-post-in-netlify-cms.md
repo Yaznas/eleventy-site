@@ -8,3 +8,7 @@ featuredImage: /img/uploads/everything-sus.jpg
 Hey 
 
 This was written in Netlify CMS to test it.
+
+What more can i write in this shit?
+
+K bye
