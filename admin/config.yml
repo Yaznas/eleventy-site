@@ -7,16 +7,34 @@ publish_mode: editorial_workflow
 media_folder: "/img/uploads"
 
 collections:
-  - name: "posts"
+  - name: "blog"
     label: "Posts"
     folder: "posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/post.njk" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Date", name: "date", widget: "date", default: "" }
-      - {label: "Tags", name: "tags", widget: "list"}
+      - { label: "Tags", name: "tags", widget: "list"}
       - { label: "Post Body", name: "body", widget: "markdown" }
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
+    
+  #For Pages
+  - name: "pages"
+    label: "Page"
+    folder: "pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - label: "Navigation" # https://www.11ty.dev/docs/plugins/navigation/
+        name: "eleventyNavigation"
+        widget: "object"
+        fields:
+          - { label: "Key", name: "key", widget: "string" }
+          - { label: "Order", name: "order", widget: "number", default: 0 }
+          - { label: "Body", name: "body", widget: "markdown" }
