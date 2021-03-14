@@ -66,9 +66,9 @@ module.exports = function(eleventyConfig) {
     return [...tagSet];
   });
 
-  eleventyConfig.addPassthroughCopy("admin");
-  eleventyConfig.addPassthroughCopy("img");
-  eleventyConfig.addPassthroughCopy("styles");
+  eleventyConfig.addPassthroughCopy("src/admin");
+  eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("src/styles");
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
@@ -123,7 +123,7 @@ module.exports = function(eleventyConfig) {
 
     // These are all optional, defaults are shown:
     dir: {
-      input: ".",
+      input: "src",
       includes: "_includes",
       data: "_data",
       output: "_site"
