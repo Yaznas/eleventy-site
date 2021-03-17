@@ -3,12 +3,8 @@
   "version": "5.0.2",
   "description": "A starter repository for a blog web site using the Eleventy static site generator.",
   "scripts": {
-    "start": "run-p start:*",
-    "start:eleventy": "eleventy --serve",
-    "start:postcss": "postcss src/styles/*.css --dir _site/styles --watch",
-    "build": "run-s clean build:eleventy build:postcss",
-    "build:eleventy": "cross-env ELEVENTY_PRODUCTION=true eleventy",
-    "build:postcss": "cross-env NODE_ENV=production postcss src/styles/*.css --dir _site/styles",
+    "start": "eleventy --serve & postcss src/styles/*.css --dir _site/styles --watch",
+    "build": "cross-env ELEVENTY_PRODUCTION=true eleventy && cross-env NODE_ENV=production postcss src/styles/*.css --dir _site/styles",
     "clean": "rimraf _site"
   },
   "repository": {
