@@ -10,6 +10,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(require("eleventy-plugin-emoji"));
 
   eleventyConfig.setDataDeepMerge(true);
 
@@ -66,9 +67,12 @@ module.exports = function(eleventyConfig) {
     return [...tagSet];
   });
 
+  // Watch Targets
+  eleventyConfig.addWatchTarget("./src/styles/");
+
+  // Passthrough
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/img");
-  eleventyConfig.addPassthroughCopy("src/styles");
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({

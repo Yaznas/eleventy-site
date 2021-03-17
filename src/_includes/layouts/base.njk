@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/styles/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/styles/prism-base16-monokai.dark.css' | url }}">
     <link rel="stylesheet" href="{{ '/styles/tailwind.css' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <header>
+    <header class="bg-gray-100 fixed top-0 inset-x-0 opacity-75 w-screen p-3 shadow">
+    <div class="flex items-center flex-no-shrink text-black mr-6">
       <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
 
       {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      <ul class="nav">
+      <ul class="flex flex-row space-x-6 font-semibold">
       {%- for entry in collections.all | eleventyNavigation %}
         <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
       {%- endfor %}
@@ -25,11 +24,15 @@
     </header>
 
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
-
       {{ content | safe }}
     </main>
 
-    <footer></footer>
+    <footer class ="flex items-center bg-gray-100 text-black fixed inset-x-0 bottom-0 p-2 text-xs">
+        <div class="flex items-center flex-no-shrink text-black mr-6">
+            &copy;<a href="https://sanjay.name.np">Sanjay Shrestha</a> - All Rights Reserved.<br>
+            Made with ✍️
+        </div>
+    </footer>
 
     <!-- Current page: {{ page.url | url }} -->
 

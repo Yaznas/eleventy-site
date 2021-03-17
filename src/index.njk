@@ -4,7 +4,6 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-
 {% set maxPosts = collections.posts.length | min(3) %}
 <h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
 
@@ -13,3 +12,8 @@ eleventyNavigation:
 {% include "postslist.njk" %}
 
 <p>More posts can be found in <a href="{{ '/blog/' | url }}">the archive</a>.</p>
+
+<div class="container flex flex-col flex-wrap items-center px-6 pt-24 mx-auto md:pt-48 md:flex-row">
+<img class="animate-bounce object-contain h-48 w-full" src="img/static/dango.png" alt="dango"></img>
+<img class="animate-bounce object-contain h-40 w-full" src="img/static/dango-mad.png" alt="dango"></img>
+</div>
