@@ -2,12 +2,13 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
+<article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
 <h1>{{ title }}</h1>
 
 <img src="{{ featuredImage | url }}" alt="{{ featuredImage }}"></img>
 
 {{ content | safe }}
-
+</article>
 <hr>
 <ul>
   {%- set nextPost = collections.posts | getNextCollectionItem(page) %}

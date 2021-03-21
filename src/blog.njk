@@ -5,8 +5,9 @@ eleventyNavigation:
   key: Blog
   order: 2
 ---
-
+<article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
 <h1>Blog Posts</h1>
 
 {% set postslist = collections.posts %}
 {% include "postslist.njk" %}
+</article>
