@@ -5,8 +5,11 @@ eleventyNavigation:
   key: Blog
   order: 2
 ---
-
-<h1>Blog Posts</h1>
+<section class="hero is-info">
+<div class="hero-body">
+<h1 class="title has-text-centered">Blog Posts</h1>
+</div>
+</section>
 
 {% set postslist = collections.posts %}
 {% include "postslist.njk" %}

@@ -7,5 +7,6 @@ eleventyNavigation:
   key: About Me
   order: 3
 ---
-
+<div class="container">
 I am a person that writes stuff.
+</div>

@@ -6,6 +6,7 @@ pagination:
 layout: layouts/home.njk
 permalink: /page-list/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}
 ---
+<div class="content container">
 <table>
   <thead>
     <th>URL</th>
@@ -20,3 +21,4 @@ permalink: /page-list/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
 {%- endfor %}
   </tbody>
 </table>
+</div>

@@ -7,6 +7,7 @@
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
     "start": "eleventy --serve",
+    "css-build": "node-sass --omit-source-map-url src/sass/mystyles.scss _site/styles/mystyles.css",
     "debug": "DEBUG=* eleventy"
   },
   "repository": {
@@ -28,9 +29,11 @@
     "@11ty/eleventy-navigation": "^0.1.6",
     "@11ty/eleventy-plugin-rss": "^1.1.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
+    "bulma": "^0.9.2",
     "luxon": "^1.25.0",
     "markdown-it": "^8.4.2",
-    "markdown-it-anchor": "^5.2.5"
+    "markdown-it-anchor": "^5.2.5",
+    "node-sass": "^5.0.0"
   },
   "dependencies": {
     "netlify-cms-app": "^2.14.27"
