@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/styles/mystyles.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/mystyles.css' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <nav class ="navbar is-light" role="navigation" arial-label="main navigation">
+    <nav class ="navbar is-white" role="navigation" arial-label="main navigation">
       <div class="navbar-brand">
       <a class ="navbar-item" href="{{ '/' | url }}">{{ metadata.title }}</a>
       </div>
 
       {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      <ul class="navbar-start navbar-menu">
+      <ul class="navbar-menu is-active">
       {%- for entry in collections.all | eleventyNavigation %}
         <li class="navbar-item {% if entry.url == page.url %} {% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
       {%- endfor %}

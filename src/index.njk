@@ -4,15 +4,28 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
+<section class="hero is-medium is-info">
+  <div class="hero-body">
+  <div class="container has-text-centered">
+    <p class="title">
+      Welcome to Sanjay's Website
+    </p>
+    <p class="subtitle">
+      Stuff to Read!
+    </p>
+  </div></div>
+</section>
 <section class="section">
 <div class="container">
 {% set maxPosts = collections.posts.length | min(3) %}
 <h1 class="title">Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
 </div>
-</section>
+
+<div class="card">
 {% set postslist = collections.posts | head(-3) %}
 {% set postslistCounter = collections.posts | length %}
 {% include "postslist.njk" %}
-
+</div>
+</section>
 <p>More posts can be found in <a href="{{ '/blog/' | url }}">the archive</a>.</p>
 
